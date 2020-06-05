@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component, Fragment } from 'react';
 import './App.css';
+import Click from './components/Click';
+import MouseHover from './components/MouseHover'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component{
+  constructor(){
+    super()
+    this.state = {
+        name: 'Jhabar'
+    }
+  }
+
+  changeProp(value){
+    console.log(value)
+  }
+
+  render(){
+    return (
+      <Fragment>
+        <MouseHover/>
+        <br />
+        <Click />
+      </Fragment>
+    );
+  }
 }
 
 export default App;
